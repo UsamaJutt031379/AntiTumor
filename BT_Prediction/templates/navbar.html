@@ -1,0 +1,101 @@
+{% load static %}
+
+<style>
+  #uper_div
+  {
+    margin-right: -480px;
+  }
+  #profile
+  {
+    transition: 0.2s;
+  }
+  #profile:hover
+  {
+    transform: scale(1.2);
+  }
+  nav a:hover
+  {
+    background-color: #e4e4e4;
+  }
+</style>
+
+{% if not user.is_authenticated %}
+
+<div class="alert alert-info alert-dismissible fade show" style="margin-top:50px ;" role="alert">
+  <strong>Greetings !</strong> You have to login to "Predict Tumor"
+  <a href="login_form"><b>LOGIN</b></a>
+  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+
+{% endif %}
+
+<!-- NavBar -->
+<nav class="navbar navbar-expand-md  fixed-top bg-light">
+       <div class="container-fluid">
+
+        {% if user.is_authenticated %}
+         <img src="{% static 'logo.png' %}" class="navbar-brand" height="2%" width="2%">
+         <a class="navbar-brand" href="index">
+          Predict-Tumor
+         </a>
+        {% endif %}
+
+
+         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+           <span class="navbar-toggler-icon"></span>
+         </button>
+         <div class="collapse navbar-collapse" id="navbarSupportedContent">
+           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+             <li class="nav-item">
+               <a class="nav-link active" aria-current="page" href="home">Home</a>
+             </li>
+             <li class="nav-item dropdown">
+               <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                 Tumor-Articles
+               </a>
+               <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="publish">Newly published</a></li>
+                <li><hr class="dropdown-divider"></li>
+                 <li><a class="dropdown-item" href="bt">Benign Tumor</a></li>
+                 <li><hr class="dropdown-divider"></li>
+                 <li><a class="dropdown-item" href="mt">Malignant Brain Tumor</a></li>
+                 <li><hr class="dropdown-divider"></li>
+                 <li><a class="dropdown-item" href="stat">Statistics </a></li>
+               </ul>
+             </li>
+
+             <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="live_well">Live well</a>
+            </li>
+
+             <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="contact">Contact us</a>
+            </li>
+
+           </ul>
+
+
+          <div id="uper_div">
+
+            {% if user.is_authenticated %}
+            <img src="{% static 'user.png' %}" id="profile" height="4%" width="5%" alt="">
+            {{user.username|capfirst}}
+              <a href="logout_form" style="margin-left: 10px;">
+                <button type="button" class="btn btn-primary">
+                  Logout
+                </button>
+              </a>
+              {% else %}
+              <a href="login_form">
+                <button type="button" class="btn btn-primary">
+                  Login
+                </button>
+              </a>
+
+            {% endif %}
+
+           </div>
+
+         </div>
+       </div>
+</nav>  

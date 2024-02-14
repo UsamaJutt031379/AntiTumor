@@ -1,0 +1,111 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <title>ANTI TUMOR</title>
+    <link rel="shortcut icon" type="image/png" href="{% static 'logo.png' %}">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+
+  </head>
+  <style>
+       #img h1 {
+              margin-left: 500px;
+              margin-top: -150px;
+              font-size: 90px;
+              color: white;
+       }
+</style>
+  <body>
+       {% include 'navbar.html' %}
+
+       <div id="img">
+
+              <img src="{% static 'live.jpg' %}" height="100%" width="100%" alt="">
+              <h1>Support</h1>
+
+       </div>
+
+         <!-- Body -->
+  <div class="container my-4">
+       <div class="p-md-5 mb-4 rounded text-bg-light ">
+         <div class="col-md-6 px-0">
+           <h1 class="display-4 fst-italic">Drug addiction: getting help</h1>
+           <p class="lead my-3">If you need treatment for drug addiction, you're entitled to NHS care in the same way as anyone else who has a health problem.
+
+              With the right help and support, it's possible for you to get drug free and stay that way.</p>
+         </div>
+       </div>
+   
+       <!-- Overview -->
+       <div class="row g-5">
+         <div class="col-md-8" id="overview">
+
+           <h1 class="pb-4 mb-4 fst-italic border-bottom">
+              Where to get help for drugs
+           </h1>
+           <p>A GP is a good place to start. They can discuss your problems with you and get you into treatment.
+
+              They may offer you treatment at the practice or refer you to your local drug service.</p>
+              <p>If you're not comfortable talking to a GP, you can approach your local drug treatment service yourself.
+
+                     Visit the Frank website to find local drug treatment services.
+                     
+                     If you're having trouble finding the right sort of help, call the Frank drugs helpline on 0300 123 6600. They can talk you through all your options.</p>
+   
+
+           <h1 class="pb-4 mb-4 fst-italic border-bottom">
+              Charity and private drugs treatment
+           </h1>
+   
+           <p>There are charities and private drug and alcohol treatment organisations that can help you.
+              
+              Private drug treatment can be very expensive</p>
+
+              <h1 class="pb-4 mb-4 fst-italic border-bottom">
+                    Tips for cutting down
+                  </h1>
+          
+                  <p> <b>If you regularly drink more than 14 units of alcohol a week, try these simple tips to help you cut down.</b> <br>
+
+                     14 units is equivalent to 6 pints of average-strength beer or 6 medium glasses of wine.</p>
+                     
+                     <h1 class="pb-4 mb-4 fst-italic border-bottom">
+                           Simple tips for cutting down
+                          </h1>
+                          <ul>
+                            <li>Make a plan</li>
+                            <li>Set the budget</li>
+                            <li>Make your friends know</li>
+                            <li>Cut back a little each day</li>
+                            <li>Stay hydrated</li>
+                            <li>Take a braek</li>
+                          </ul>
+                          <h1 class="pb-4 mb-4 fst-italic border-bottom">
+                            Benefits of cutting down
+                           </h1>  
+                           <ul>
+                            <li>Feeling better in the morning</li>
+                            <li>being less tired during the day</li>
+                            <li>better looking skin</li>
+                            <li>feeling more energetic</li>
+                            <li>better weight management</li>
+                            <li>Remain safe from cancer</li>
+                           </ul>
+
+         </div>
+         
+       </div>
+     </div>
+     <!-- End Body -->
+
+       {% include 'footer.html' %}
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous">
+    </script>
+  </body>

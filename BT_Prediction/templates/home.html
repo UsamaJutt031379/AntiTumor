@@ -1,0 +1,219 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <title>ANTI TUMOR</title>
+    <link rel="shortcut icon" type="image/png" href="{% static 'logo.png' %}">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <link rel="stylesheet" href="aos-by-red.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+  </head>
+<style>
+  #img{
+    background: url('/static/care2.jpg') no-repeat center center fixed;
+    height: 300px;
+    color: white;
+    padding-top: 100px;
+    padding-left: 160px;
+  }
+
+  .h1, h1 {
+    font-size: 4rem;
+  }
+
+
+</style>
+
+  <body>
+
+{% include 'navbar.html' %}
+
+<!-- Crousel -->
+<div id="carouselExampleCaptions" class="carousel slide carousel-fade" data-bs-ride="false">
+       <div class="carousel-indicators">
+         <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+         <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+         <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+       </div>
+       <div class="carousel-inner">
+         <div class="carousel-item active">
+           <img src="{% static 'Dr.jpg' %}" class="d-block w-100" height="700px">
+           <div class="carousel-caption d-none d-md-block">
+             <h2>WELCOME</h2>
+
+           </div>
+         </div>
+         <div class="carousel-item">
+           <img src="{% static 'tech.jpg' %}" class="d-block w-100" height="700px">
+           <div class="carousel-caption d-none d-md-block">
+             <h2>Technology</h2>
+             <p>Making health and care better with technology</p>
+           </div>
+         </div>
+
+         <div class="carousel-item">
+           <img src="{% static 'care.jpg' %} " class="d-block w-100" height="700px">
+           <div class="carousel-caption d-none d-md-block">
+             <h2>Care</h2>
+             <p>Which differs us from other hospitals</p>
+           </div>
+         </div>
+       </div>
+       <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+         <span class="visually-hidden">Previous</span>
+       </button>
+       <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+         <span class="carousel-control-next-icon" aria-hidden="true"></span>
+         <span class="visually-hidden">Next</span>
+       </button>
+     </div>
+<!-- End Crousel -->
+
+
+
+<!-- Body (2) -->
+<div class="container">
+       <div class="row featurette my-4" data-aos="fade-up">
+              <div class="col-md-7 order-md-2">
+              <h1 class="featurette-heading fw-normal lh-1">Why This System ?</h1>
+                     <p class="lead">This website is time savings, high in performance and earlier detection of tumors. Supports radiologists in complex cases of brain tumor, helping them minimize risks. According to studies, AI-supported technology has 97% to 99% accuracy and increases workflow efficiency by decreasing the total report reading time by 34%.With the help of this website, radiologists can automatically detect small, tumor affected areas.
+                            </p>
+              </div>
+              <div class="col-md-5">
+                     <img src="{% static 'why.jpg' %}" height="450px" width="350px">
+
+              </div>
+       </div>
+
+       <div class="row featurette my-4" data-aos="fade-up">
+              <div class="col-md-7">
+              <h1 class="featurette-heading fw-normal lh-1">About</h1>
+              <p class="lead">We have introduced a website ANTITUMOR for brain tumor detection. The system will separate the MRI of diseased person from the healthy with the help of image processing and works with high accuracy than any doctor.</p>
+              </div>
+              <div class="col-md-5">
+                     <img src="{% static 'about.jpg' %}" height="450px" width="450px">
+
+              </div>
+       </div>     
+</div>
+<!-- End Body (2) -->
+
+
+<!-- Services -->
+<div class="container">
+    <h1 class="fw-normal lh-1">Our Services</h1>
+
+    <div class="row row-cols-1 row-cols-lg-3 align-items-stretch g-4 py-5">
+      <div class="col"  data-aos="fade-left">
+        <div class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg" style="background-image: url('/static/Meg1.jpg');">
+          <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
+            <h2 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">Brain Tumor Prediction With MRI Scans</h2>
+          </div>
+        </div>
+      </div>
+
+      <div class="col"  data-aos="fade-left">
+        <div class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg" style="background-image: url('/static/art.png');">
+          <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
+            <h2 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">Our Articles On Brain Tumor</h2>
+          </div>
+        </div>
+      </div>
+
+      <div class="col"  data-aos="fade-left">
+        <div class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg" style="background-image: url('/static/health.png');">
+          <div class="d-flex flex-column h-100 p-5 pb-3 text-shadow-1">
+            <h2 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">Health & Care</h2>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- End services -->
+
+
+<div class="container" data-aos="fade-right">
+
+  <div class="text">
+
+      <h1 class="fw-normal lh-1 my-4">About Us</h1>
+        <p class="lead text-muted" style="margin-right:200px; margin-top:30px; margin-bottom:40px;">We are a group of three students, doing our bacholer in Computer Sciences from COMSATS University Islamabad (Sahiwal Campus). And this Aniti-tumor Website is our Final Year project.</p>
+
+  </div>
+
+  <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3" style="margin-bottom:50px ;">
+   <div class="col">
+     <div class="card shadow-sm">
+       <img src="{% static 'me.jpg' %}" alt="">
+
+       <div class="card-body">
+         <p class="card-text text-center">Graphic & Web Designer</p>
+         <p class="card-text text-center">Django Developer</p>
+       </div>
+     </div>
+   </div>
+   <div class="col">
+     <div class="card shadow-sm">
+
+      <img src="{% static 'sheikh.jpg' %}" alt="">
+
+       <div class="card-body">
+         <p class="card-text text-center">Web Developer</p>
+      
+       </div>
+     </div>
+   </div>
+   <div class="col">
+     <div class="card shadow-sm">
+      <img src="{% static 'uk.jpg' %}" alt="">
+
+       <div class="card-body">
+         <p class="card-text text-center">Game Developer</p>
+       </div>
+     </div>
+   </div>
+
+</div>
+</div>
+
+
+
+
+<!-- Image -->
+<div class="container my-4" id="img">
+
+  <h1>Your Health Is Our Priority</h1>
+</div>
+
+<!-- End Image -->
+
+
+
+
+
+{% include 'footer.html' %}
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous">
+    </script>
+
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init({
+        duration: 1000,
+        once: true,
+      });
+    </script>
+
+
+  </body>
+</html>

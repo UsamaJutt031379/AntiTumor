@@ -1,0 +1,185 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ANTI TUMOR</title>
+  <link rel="shortcut icon" type="image/png" href="{% static 'logo.png' %}">
+  <link rel="shortcut icon" type="image/png" href="{% static 'logo.png' %}">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+  <link rel="stylesheet" href="index.css">
+</head>
+
+<style>
+  #card
+  {
+         box-shadow: 1px 4px 10px 0px #888888;
+  }
+</style>
+
+<body>
+
+{% include 'navbar.html' %}
+
+
+  <!-- Body -->
+  <div class="container my-4">
+    <div class="p-4 p-md-5 mb-4 rounded text-bg-dark ">
+      <div class="col-md-6 px-0">
+        <h1 class="display-4 fst-italic">Malignant brain tumour (brain cancer)</h1>
+        <p class="lead my-3"><b>A malignant brain tumour is a cancerous growth in the brain.</b>
+          It's different from a benign brain tumour, which isn't cancerous and tends to grow more slowly.
+      </div>
+    </div>
+
+    <div class="row" style="margin: 50px;">
+      <div class="card mx-4" style="width: 18rem;"  id="card">
+             <img src="{% static 'B-Tumor.jpg' %}" class="card-img-top" alt="...">
+             <div class="card-body">
+               <h5 class="card-title">Representation of Tumor</h5>
+             </div>
+           </div>
+           <div class="card mx-4" style="width: 18rem;" id="card">
+             <img src="{% static 'mt.jpg' %}" class="card-img-top" alt="...">
+             <div class="card-body">
+               <h5 class="card-title">MRI Malignant Tumor</h5>
+             </div>
+           </div>
+           <div class="card mx-4" style="width: 18rem;" id="card">
+             <img src="{% static 'mt-2.jpg' %}" class="card-img-top" alt="...">
+             <div class="card-body">
+               <h5 class="card-title">MRI Malignant Tumor</h5>
+             </div>
+           </div>
+    </div>
+
+    <!-- Overview -->
+    <div class="row g-5">
+      <div class="col-md-8" id="overview">
+        <h1 class="pb-4 mb-4 fst-italic border-bottom">
+          Symptoms
+        </h1>
+        <p>The symptoms of a brain tumour depend on where it is in the brain. Common symptoms include:</p>
+
+        <ul>
+          <li>Headaches (often worse in the morning and when coughing or straining).</li>
+          <li>Fits (seizures).</li>
+          <li>Regularly feeling sick (vomiting).</li>
+          <li>Memory problems or changes in personality.</li>
+          <li>Weakness, vision problems or speech problems that get worse.</li>
+        </ul>
+        <p>See a GP if you have symptoms of a brain tumour that don't go away. It's unlikely to be a tumour, but it's
+          best to be sure.</p>
+        <hr>
+        <h2>Types</h2>
+        <p>There are lots of types of brain tumour. They have different names depending on where they are in the
+          brain.They're also given a number from 1 to 4, known as the grade.The higher the number, the more serious a
+          tumour is:</p>
+
+        <ul>
+          <li>Grade 1 and 2 brain tumours are non-cancerous (benign) tumours that tend to grow quite slowly.</li>
+          <li>Grade 3 and 4 brain tumours are cancerous (malignant) tumours that grow more quickly and are more
+            difficult to treat.</li>
+        </ul>
+
+        <p>Brain tumours are also called primary (which start in the brain) and secondary (which spread to the brain).
+        </p>
+
+        <hr>
+        <h2>Treatments</h2>
+        <p>Treatment for a brain tumour aims to remove as much of it as possible and try to stop it coming back.The main
+          treatments are:</p>
+
+        <ul>
+          <li>Surgery – a small section of skull is removed and the tumour is cut out before the piece of skull is fixed
+            back in place.</li>
+          <li>Radiotherapy – radiation from an external machine is used to kill cancer cells after surgery.</li>
+          <li>Chemotherapy – medicine is used to kill cancer cells after surgery, or relieve symptoms if the tumour
+            can't be removed.</li>
+          <li>Radiosurgery – lots of tiny beams of radiation are aimed at the cancer to kill it if you can't have
+            surgery.</li>
+          <li>Carmustine implants (glial wafers) – a new way of giving chemotherapy for some high-grade tumours, where
+            implants are inserted into the brain.</li>
+        </ul>
+        <p>Medicines may also be used to relieve symptoms like headaches, seizures and being sick (vomiting).</p>
+
+        <h2>Outlook</h2>
+        <p>The outlook for a malignant brain tumour depends on things like where it is in the brain, its size, and what
+          grade it is.
+
+          It can sometimes be cured if caught early on, but a brain tumour often comes back and sometimes it isn't
+          possible to remove it.
+
+          Speak to your care team if you'd like to know what the outlook is for you, as it varies from person to person.
+        </p>
+
+        <h2>Recovery and after effects</h2>
+        <p>After treatment, you might have some lasting problems, such as:</p>
+        <ul>
+          <li>Seizures</li>
+          <li>Walking difficulties</li>
+          <li>Speech problems</li>
+        </ul>
+
+        <p>You may need treatment and support like occupational therapy and physiotherapy to help you recover or adapt
+          to any problems.
+
+          It's important to follow a healthy lifestyle to lower your risk of stroke.
+
+          This means stopping smoking if you smoke, following a healthy diet and doing regular exercise.
+
+          You may be able to gradually return to your normal activities as you recover, although some things (like
+          contact sports) may need to be avoided for life.</p>
+
+        <h2>Side effects of treatment</h2>
+        <p>Some people who have had a brain tumour can develop side effects from treatment months or years later, such
+          as:</p>
+        <ul>
+          <li>Cataracts</li>
+          <li>Epilepsy</li>
+          <li>Problems with thinking, memory, language or judgement</li>
+        </ul>
+
+        <p>Rarely, a stroke might happen.
+
+          If you or someone you care for has any worrying symptoms that develop after brain tumour treatment, see your
+          doctor.</p>
+
+
+      </div>
+      <div class="col-md-4">
+        <div class="position-sticky" style="top: 2rem;">
+          <div class="p-4 mb-3 bg-light rounded">
+            <h4 class="fst-italic">About</h4>
+            <p class="mb-0">We are covering following topics in our article related to this specific type of brain
+              tumor:</p>
+
+            <ul>
+              <li>Symptoms</li>
+              <li>Types</li>
+              <li>Treatments</li>
+              <li>Outlook</li>
+              <li>Recovery and after effects</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- End Body -->
+
+
+{%  include 'footer.html' %}
+
+
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
+    crossorigin="anonymous"></script>
+
+</body>
+
+</html>

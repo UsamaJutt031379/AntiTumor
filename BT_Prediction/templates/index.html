@@ -1,0 +1,270 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+
+<head>
+       <meta charset="utf-8">
+       <meta name="viewport" content="width=device-width, initial-scale=1">
+       <title>ANTI TUMOR</title>
+       <link rel="shortcut icon" type="image/png" href="{% static 'logo.png' %}">
+       <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+              integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT"
+              crossorigin="anonymous">
+       <link rel="stylesheet" href="aos-by-red.css">
+       <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+</head>
+
+<style>
+       #cards {
+              margin-top: 70px;
+              margin-left: 50px;
+              margin-right: 50px;
+              box-shadow: 3px 4px 20px 2px #888888;
+       }
+
+       #card_head {
+              background-color: #009ca9;
+              color: #d7f8ff;
+              display: flex;
+       }
+
+       #card_head h3 {
+              margin-left: 300px;
+              margin-top: 25px;
+       }
+
+       #Dr_img {
+              height: 300px;
+              width: 250px;
+       }
+
+       #btn {
+              display: flex;
+              margin: 30px;
+              margin-left: 630px;
+       }
+
+       #btn button {
+              margin: 10px;
+              padding-left: 50px;
+              padding-right: 50px;
+       }
+       #guide
+       {
+              margin-top: 100px;
+       }
+       #upper
+       {
+              display: flex;
+       }
+       #upper h1
+       {
+              margin-top: 170px;
+              margin-left: 35px;
+       }
+       #upper p
+       {
+              font-size: 17px;
+              margin-top: 230px;
+              margin-left: -115px;    
+       }
+
+</style>
+
+<body>
+
+       {% include 'navbar.html' %}
+
+       <div class="container" id="cont_1">
+
+              <div id="upper">
+                            <img src="{% static 'user guide.png' %}" height="35%" width="35%" alt="" id="guide">
+
+                            <h1>Guide</h2>
+                            <p>
+                                   All you need to do
+                                   is to bring your MRI scan in the upload image section given just below.
+                                   After that click "Test" button and the system will tell you either you have Brain Tumor or not.
+                            </p>
+              </div>
+
+              <h4 style="margin-top: 80px; margin-bottom: 40px;">Upload Your MRI</h4>
+
+
+              <form method="post" enctype="multipart/form-data">
+                     {% csrf_token %}
+                     
+
+                     <div class="input-group">
+                     <input type="file" class="form-control" name="upload" id="inputGroupFile04" aria-describedby="inputGroupFileAddon04" aria-label="Upload">
+                     
+                     <button class="btn btn-outline-secondary" type="submit" id="inputGroupFileAddon04" value="submit">Test</button>
+                     </div>
+
+              </form>
+
+       </div>
+
+       <div class="container visible" id="cont_2">
+              {% if pred == 'Positive' %}
+
+              <div class="card" id="cards" data-aos="fade-left">
+
+                     <div class="card-header" id="card_head">
+                            <img src="{% static 'logo.png' %}" alt="" width="8%" height="8%">
+                            <h3 style="text-align:center ;">Tumor Report</h3>
+                     </div>
+
+                     <div class="row g-0 ">
+                            <div class="col-sm-6 col-md-8">
+                                   <div class="card-body">
+                                          <h3 class="card-title" style="margin-bottom: 20px;margin-top:10px;"> Tumor
+                                                 Status : <b style="color:red;">{{pred}}</b></h3>
+
+                                                 {% if user.is_authenticated %}
+                                                 <table class="table">
+                                                        <thead>
+                                                          <tr>
+                                                            <th scope="col">#</th>
+                                                            <th scope="col">Name</th>
+                                                            <th scope="col">Email</th>
+                                                            <th scope="col">Tumor</th>
+                                                          </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                          <tr>
+                                                            <th scope="row">1</th>
+                                                            <td>{{user.username}}</td>
+                                                            <td>{{user.email}}</td>
+                                                            <td>{{pred}}</td>
+                                                          </tr>
+                                                          <tr>
+                                                        </tbody>
+                                                 </table>
+                                                 {% endif %}
+
+                                          <p class="card-text" style="margin-top:50px ;">
+
+                                          <h5>According to our system</h5>
+
+                                          <p>You are suffering from the Brain Tumor and you should consult your doctor
+                                                 as soon as possible for the further treatments.</p>
+
+                                          <h5>About the tumor</h5>
+                                          <p>A brain tumor is a growth of abnormal cells that have formed in the brain.
+                                                 Some brain tumors are malignant (cancerous), while others are not
+                                                 (non-malignant, non-cancerous or benign). A brain tumor can form in the
+                                                 brain or other parts of the central nervous system (CNS), such as the
+                                                 spine or cranial nerves. The brain plays a central role in the control
+                                                 of most bodily functions, including awareness, movements, sensations,
+                                                 thoughts, speech, and memory. A tumor can affect the brain’s ability to
+                                                 work properly and adequately perform such functions.</p>
+
+                                          </p>
+                                   </div>
+                            </div>
+                            <div class="col-6 col-md-4">
+
+                                   <img src="{% static 'doctor.jpg' %}" alt="" id="Dr_img">
+                            </div>
+                     </div>
+                     <div id="btn">
+                            <a href="mt"><button type="button" class="btn btn-primary">read more</button></a>
+
+                            <a href="index"><button type="button" class="btn btn-secondary">clear</button></a>
+                     </div>
+
+              </div>
+
+              {% elif pred == 'Negative' %}
+
+              <div class="card" id="cards" data-aos="fade-left">
+                     <div class="card-header" id="card_head">
+                            <img src="{% static 'logo.png' %}" alt="" width="8%" height="8%">
+                            <h3>Tumor Report</h3>
+                     </div>
+
+                     <div class="row g-0 ">
+                            <div class="col-sm-6 col-md-8">
+                                   <div class="card-body">
+                                          <h3 class="card-title" style="margin-bottom: 30px;margin-top:10px;">Tumor
+                                                 Status :
+                                                 <b style="color:green ;">{{pred}}</b>
+                                          </h3>
+
+                                          {% if user.is_authenticated %}
+                                          <table class="table">
+                                                 <thead>
+                                                   <tr>
+                                                     <th scope="col">#</th>
+                                                     <th scope="col">Name</th>
+                                                     <th scope="col">Email</th>
+                                                     <th scope="col">Tumor</th>
+                                                   </tr>
+                                                 </thead>
+                                                 <tbody>
+                                                   <tr>
+                                                     <th scope="row">1</th>
+                                                     <td>{{user.username}}</td>
+                                                     <td>{{user.email}}</td>
+                                                     <td>{{pred}}</td>
+                                                   </tr>
+                                                   <tr>
+                                                 </tbody>
+                                          </table>
+                                          {% endif %}
+
+                                          <p class="card-text" style="margin-top:40px ;">
+
+                                          <h5>According to our system</h5>
+
+                                          <p>You are completely healthy. You should take some regular exercises and good
+                                                 diet to remain healthy.</p>
+
+                                          <h5>About the tumor</h5>
+                                          <p>A brain tumor is a growth of abnormal cells that have formed in the brain.
+                                                 Some brain tumors are malignant (cancerous), while others are not
+                                                 (non-malignant, non-cancerous or benign). A brain tumor can form in the
+                                                 brain or other parts of the central nervous system (CNS), such as the
+                                                 spine or cranial nerves. The brain plays a central role in the control
+                                                 of most bodily functions, including awareness, movements, sensations,
+                                                 thoughts, speech, and memory. A tumor can affect the brain’s ability to
+                                                 work properly and adequately perform such functions.</p>
+
+                                          </p>
+                                   </div>
+
+                            </div>
+                            <div class="col-6 col-md-4">
+
+                                   <img src="{% static 'doctor.jpg' %}" alt="" id="Dr_img">
+                            </div>
+                     </div>
+                     <div id="btn">
+                            <a href="mt"><button type="button" class="btn btn-primary">read more</button></a>
+
+                            <a href="index"><button type="button" class="btn btn-secondary">clear</button></a>
+                     </div>
+              </div>
+
+
+              {% endif %}
+       </div>
+
+       {% include 'footer.html' %}
+
+</body>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"
+       integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8"
+       crossorigin="anonymous"></script>
+
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script>
+       AOS.init({
+              duration: 1000,
+              once: true,
+       });
+</script>
+
+</html>
